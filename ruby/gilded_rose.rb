@@ -23,7 +23,11 @@ class GildedRose
       update_other_item(item)
     end
   end
-
+  
+  # This function currently handles various item types with specific rules.
+  # To improve readability and maintainability, consider refactoring it to be more modular.
+  # Specifically, explore creating separate functions for different item types, such as conjured items,
+  # and follow the DRY concept of Rails to avoid repetition and enhance code organization.
   def update_other_item(item)
     if item.sell_in > 0
       if item.name != Constant::AGED_BRIE_ITEM and item.name != Constant::BACKSTAGE_CONCERT_ITEM
